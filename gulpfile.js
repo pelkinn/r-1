@@ -5,6 +5,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     sourcemaps = require('gulp-sourcemaps');
     autoprefixer = require('gulp-autoprefixer');
+    cssmin = require('gulp-cssmin');
+    rename = require('gulp-rename');
 
 var smartgridSettings = {
     outputStyle: 'less', /* less || scss || sass || styl */
@@ -52,6 +54,15 @@ gulp.task('autoprefix', function () {
         }))
         .pipe(gulp.dest('css/'));
 });
+
+
+gulp.task('minify', function () {
+    gulp.src('css/style.css')
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('min/'));
+});
+
 
 /**
  * Генерация сетки less, вместо bootstrap.css

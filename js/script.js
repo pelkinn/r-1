@@ -18,18 +18,5 @@ $('.nav-item').on('click', function(){
 	$('.drop-menu').toggleClass('open-menu');
 })
 
-/*
-	$('.nav-link').on('click', function(){
-		$(this).siblings('.drop-menu').toggleClass('open');
-	});
 
-	
-
-			$('.nav-item').hover(function(){
-				$('.drop-menu').addClass('open');
-			},function(){
-				$('.drop-menu').removeClass('open');
-
-			});
-*/
 });
